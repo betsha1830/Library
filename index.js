@@ -45,14 +45,18 @@ function addBookToMyLibrary() {
 function displayBooks() {
 	for (let book_count = 0; book_count < my_library.length; book_count++) {
 		if (display_count < my_library.length + 1) {
-			document.querySelector(`#book-${display_count} #title`).innerText =
-				my_library[book_count].title
-			document.querySelector(`#book-${display_count} #author`).innerText =
-				my_library[book_count].author
-			document.querySelector(`#book-${display_count} #pages`).innerText =
-				my_library[book_count].pages
-			document.querySelector(`#book-${display_count} #read`).innerText =
-				my_library[book_count].read
+			document.querySelector(
+				`#book-${display_count} #title`
+			).innerText = `Title: ${my_library[book_count].title}`
+			document.querySelector(
+				`#book-${display_count} #author`
+			).innerText = `Author: ${my_library[book_count].author}`
+			document.querySelector(
+				`#book-${display_count} #pages`
+			).innerText = `Pages: ${my_library[book_count].pages}`
+			document.querySelector(
+				`#book-${display_count} #read`
+			).innerText = `Read: ${my_library[book_count].read}`
 			display_count += 1
 		}
 	}
@@ -71,6 +75,7 @@ function createBlock() {
 				block.appendChild(document.createElement("div")).id = "pages"
 				block.appendChild(document.createElement("div")).id = "read"
 				content_count++
+				block.className = "card"
 			}
 		}
 	}
