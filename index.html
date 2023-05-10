@@ -13,14 +13,27 @@
 		<link href="style.css" rel="stylesheet" />
 		<title>Library</title>
 	</head>
-	<body>
-		<div class="field">
-			<label>Title:</label><input id="title-field" type="text" /> <br />
-			<label>Author:</label><input id="author-field" type="text" /> <br />
-			<label>Pages:</label><input id="pages-field" type="text" /> <br />
-			<label>Read:</label><input id="read-field" type="text" /> <br />
-			<button id="add-btn">Add</button>
+	<body class="container">
+		<div class="title">
+			<h1>Welcome to your personal library.</h1>
+			<div>
+				Fill out the fields below to start adding the books you've read.
+			</div>
 		</div>
+
+		<div class="image-field">
+			<div class="field">
+				<label>Title:</label><input id="title-field" type="text" /> <br />
+				<label>Author:</label><input id="author-field" type="text" /> <br />
+				<label>Pages:</label><input id="pages-field" type="text" /> <br />
+				<label>Read:</label><input id="read-field" type="text" /> <br />
+				<div class="add-btn">
+					<button id="add-btn">Add</button>
+				</div>
+			</div>
+			<div class="image"><img src="./src/images/library.png" /></div>
+		</div>
+
 		<div id="books"></div>
 	</body>
 	<script src="index.js"></script>
