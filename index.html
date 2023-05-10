@@ -4,10 +4,24 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Ysabeau:wght@300;400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<link href="style.css" rel="stylesheet" />
 		<title>Library</title>
 	</head>
 	<body>
-		<div class="books"></div>
+		<div class="field">
+			<label>Title:</label><input id="title-field" type="text" /> <br />
+			<label>Author:</label><input id="author-field" type="text" /> <br />
+			<label>Pages:</label><input id="pages-field" type="text" /> <br />
+			<label>Read:</label><input id="read-field" type="text" /> <br />
+			<button id="add-btn">Add</button>
+		</div>
+		<div id="books"></div>
 	</body>
 	<script src="index.js"></script>
 </html>
