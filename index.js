@@ -21,9 +21,15 @@ add_book_btn.addEventListener("click", () => {
 	backdrop.style.visibility = "visible"
 })
 
+//	Hide input field when backdrop is clicked
 backdrop.addEventListener("click", () => {
 	backdrop.style.visibility = "hidden"
 })
+
+//	Helps input field to not close on click. A behaviour that is inherited from parent element (backdrop)
+document
+	.getElementById("field")
+	.addEventListener("click", (e) => e.stopPropagation())
 
 function Book(title, author, pages, read) {
 	this.title = title
@@ -109,12 +115,19 @@ function createBlock() {
 }
 
 //	An event listener to change the read status
-function change_read_status() {
-	let book_num
-	document.addEventListener("click", (e) => {
-		if (e.target.id === "read-status") {
-			book_num = e.target.className
+document.addEventListener("click", (e) => {
+	if (e.target.id === "read-status") {
+		if (
+			document.querySelector(`#read-${e.target.className}`).innerText ===
+			"Read: No"
+		) {
+			document.querySelector(`#read-${e.target.className}`).innerText =
+				"Read: Yes"
+			my_library[parseInt(e.target.className) - 1].read = "Yes"
+		} else {
+			document.querySelector(`#read-${e.target.className}`).innerText =
+				"Read: No"
+			my_library[parseInt(e.target.className) - 1].read = "No"
 		}
-	})
-	console.log(book_num)
-}
+	}
+})
